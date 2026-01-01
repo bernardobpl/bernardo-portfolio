@@ -1,0 +1,10 @@
+{
+  "name": "@portfolio/ui",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "exports": {
+    "./src/button": "./src/button.tsx"
+  },
+  "nx": {}
+}

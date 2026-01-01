@@ -1,5 +1,5 @@
 {
-  "name": "@org/source",
+  "name": "@portfolio/source",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {},
@@ -66,8 +66,6 @@
   },
   "workspaces": [
     "apps/*",
-    "libs/api/products",
-    "libs/shared/*",
-    "libs/shop/*"
+    "packages/*"
   ]
 }
