@@ -1,19 +1,21 @@
+import { cn } from '@portfolio/ui'
 import { useState } from 'react'
+import { Todo } from '../types'
 import { TodoFooter } from './todo-footer'
-import { TodoHeader } from './todo-header'
 import { TodoForm } from './todo-form'
+import { TodoHeader } from './todo-header'
 import { TodoList } from './todo-list'
-import { TodoListItem } from './todo-list-item'
 import { TodoListEmpty } from './todo-list-empty'
+import { TodoListItem } from './todo-list-item'
 
-interface Todo {
-  id: string
-  name: string
-  completed: boolean 
+
+interface TodoListManagerProps {
+  className?: string;
+  title?: string;
+  initialTodos?: Todo[];
 }
-
-export function TodoListManager() {
-  const [todos, setTodos] = useState<Todo[]>([])
+export const TodoListManager = ({ className, initialTodos=[], title }: TodoListManagerProps) => {
+  const [todos, setTodos] = useState<Todo[]>(initialTodos)
 
   const handleAddTodo = (name: string) => {
     const newTodo: Todo = {
@@ -54,8 +56,8 @@ export function TodoListManager() {
   const completedCount = todos.filter((todo) => todo.completed).length
 
   return (
-    <div className="flex flex-col w-100 border border-black p-4 items-center">
-      <TodoHeader title="Todo App" />
+    <div className={cn('flex flex-col w-100 border border-black p-4 items-center', className)}>
+      <TodoHeader title={title} />
       <TodoForm onAdd={handleAddTodo} />
       <TodoList todoList={todos} empty={<TodoListEmpty />} className='mt-4'>
         {(todo) => (
