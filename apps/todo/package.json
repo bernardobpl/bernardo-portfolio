@@ -3,6 +3,13 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  
+  "exports": {
+    ".": {
+      "import": "./src/App.tsx",
+      "types": "./src/App.tsx"
+    }
+  },
   "devDependencies": {
     "@portfolio/ui": "*"
   }

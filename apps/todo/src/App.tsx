@@ -1,7 +1,7 @@
 import { TodoListManager } from "./components/todo-list-manager"
 import { Window } from "@portfolio/ui"
 
-function App() {
+export function App() {
   return (
     <div>
       <Window defaultPosition={{ x:0, y:0 }}>
